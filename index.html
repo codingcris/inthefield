@@ -37,7 +37,7 @@
             display: flex;
             will-change: transform;
             animation: scroll 10s linear infinite;
-            gap: 0; /* Remove gap to prevent snapping */
+            gap: 0; /* Prevents snapping */
         }
 
         .product-image {
@@ -45,7 +45,7 @@
             justify-content: center;
             align-items: center;
             padding: 1rem;
-            margin: 0 4rem; /* Add spacing without breaking animation */
+            margin: 0 4rem; /* Default spacing */
             flex-shrink: 0; /* Prevents shrinking */
         }
 
@@ -54,7 +54,7 @@
             width: auto;
         }
 
-        /* Smooth infinite scrolling */
+        /* Keyframe animation for smooth infinite scrolling */
         @keyframes scroll {
             from {
                 transform: translateX(0);
@@ -63,6 +63,22 @@
                 transform: translateX(-50%);
             }
         }
+
+        /* ✅ Mobile Optimization */
+        @media (max-width: 768px) {
+            .carousel-track {
+                animation: scroll 6s linear infinite; /* Slightly faster on small screens */
+            }
+
+            .product-image {
+                margin: 0 2rem; /* Reduce spacing for smaller screens */
+            }
+
+            .product-image img {
+                max-height: 180px; /* Reduce image size for smaller devices */
+            }
+        }
+
     </style>
 </head>
 <body>
