@@ -36,8 +36,8 @@
         .carousel-track {
             display: flex;
             will-change: transform;
-            animation: scroll 10s linear infinite;
-            gap: 0; /* Prevents snapping */
+            animation: scroll 8s linear infinite;
+            transform: translate3d(0, 0, 0);
         }
 
         .product-image {
@@ -45,40 +45,26 @@
             justify-content: center;
             align-items: center;
             padding: 1rem;
-            margin: 0 4rem; /* Default spacing */
-            flex-shrink: 0; /* Prevents shrinking */
+            margin: 0 4rem;
+            flex-shrink: 0;
+            backface-visibility: hidden;
         }
 
         .product-image img {
             max-height: 250px;
             width: auto;
+            display: block;
         }
 
-        /* Keyframe animation for smooth infinite scrolling */
+        /* TRUE seamless scrolling */
         @keyframes scroll {
             from {
                 transform: translateX(0);
             }
             to {
-                transform: translateX(-50%);
+                transform: translateX(-100%);
             }
         }
-
-        /* ✅ Mobile Optimization */
-        @media (max-width: 768px) {
-            .carousel-track {
-                animation: scroll 6s linear infinite; /* Slightly faster on small screens */
-            }
-
-            .product-image {
-                margin: 0 2rem; /* Reduce spacing for smaller screens */
-            }
-
-            .product-image img {
-                max-height: 180px; /* Reduce image size for smaller devices */
-            }
-        }
-
     </style>
 </head>
 <body>
@@ -91,7 +77,13 @@
             <div class="product-image"><img src="images/Stickers.png" alt="stickers"></div>
             <div class="product-image"><img src="images/TShirt.png" alt="t-shirt"></div>
 
-            <!-- Duplicate set for seamless looping -->
+            <!-- Duplicate set #1 -->
+            <div class="product-image"><img src="images/Board2.png" alt="product"></div>
+            <div class="product-image"><img src="images/FieldBath.png" alt="product"></div>
+            <div class="product-image"><img src="images/Stickers.png" alt="stickers"></div>
+            <div class="product-image"><img src="images/TShirt.png" alt="t-shirt"></div>
+
+            <!-- Duplicate set #2 -->
             <div class="product-image"><img src="images/Board2.png" alt="product"></div>
             <div class="product-image"><img src="images/FieldBath.png" alt="product"></div>
             <div class="product-image"><img src="images/Stickers.png" alt="stickers"></div>
