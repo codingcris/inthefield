@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinite Carousel</title>
+    <style>
+        :root {
+            font-size: 16px;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            background-color: #f8f8f8;
+        }
+
+        .products-carousel {
+            display: flex;
+            overflow: hidden;
+            position: relative;
+            width: 100vw;
+            height: 250px;
+            white-space: nowrap;
+        }
+
+        .carousel-track {
+            display: flex;
+            will-change: transform;
+            animation: scroll 10s linear infinite;
+            gap: 0; /* Remove gap to prevent snapping */
+        }
+
+        .product-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+            margin: 0 4rem; /* Add spacing without breaking animation */
+            flex-shrink: 0; /* Prevents shrinking */
+        }
+
+        .product-image img {
+            max-height: 250px;
+            width: auto;
+        }
+
+        /* Smooth infinite scrolling */
+        @keyframes scroll {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-50%);
+            }
+        }
+    </style>
+</head>
+<body>
+
+   <section class="products-carousel">
+        <div class="carousel-track">
+            <!-- Original set of images -->
+            <div class="product-image"><img src="images/Board2.png" alt="product"></div>
+            <div class="product-image"><img src="images/FieldBath.png" alt="product"></div>
+            <div class="product-image"><img src="images/Stickers.png" alt="stickers"></div>
+            <div class="product-image"><img src="images/TShirt.png" alt="t-shirt"></div>
+
+            <!-- Duplicate set for seamless looping -->
+            <div class="product-image"><img src="images/Board2.png" alt="product"></div>
+            <div class="product-image"><img src="images/FieldBath.png" alt="product"></div>
+            <div class="product-image"><img src="images/Stickers.png" alt="stickers"></div>
+            <div class="product-image"><img src="images/TShirt.png" alt="t-shirt"></div>
+        </div>
+   </section> 
+
+</body>
+</html>
