@@ -5,25 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Infinite Carousel</title>
     <style>
-        :root {
-            font-size: 16px;
-        }
-
+        /* ✅ CSS Reset: Removes default browser styles */
         *, *::before, *::after {
+            margin: 0;
+            padding: 0;
             box-sizing: border-box;
         }
 
-        body {
-            height: 100vh;
-            width: 100vw;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+        html, body {
+            height: 100%;
+            width: 100%;
             overflow: hidden;
             background-color: #f8f8f8;
         }
 
+        /* ✅ Carousel container */
         .products-carousel {
             display: flex;
             overflow: hidden;
@@ -33,6 +29,7 @@
             white-space: nowrap;
         }
 
+        /* ✅ Smooth infinite animation */
         .carousel-track {
             display: flex;
             will-change: transform;
@@ -40,6 +37,7 @@
             transform: translate3d(0, 0, 0);
         }
 
+        /* ✅ Image styling */
         .product-image {
             display: flex;
             justify-content: center;
@@ -56,7 +54,7 @@
             display: block;
         }
 
-        /* TRUE seamless scrolling */
+        /* ✅ True seamless scrolling */
         @keyframes scroll {
             from {
                 transform: translateX(0);
