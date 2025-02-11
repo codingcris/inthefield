@@ -36,8 +36,8 @@
         .carousel-track {
             display: flex;
             will-change: transform;
-            animation: scroll 8s linear infinite;
-            transform: translate3d(0, 0, 0);
+            animation: scroll 10s linear infinite;
+            gap: 0; /* Remove gap to prevent snapping */
         }
 
         .product-image {
@@ -45,24 +45,22 @@
             justify-content: center;
             align-items: center;
             padding: 1rem;
-            margin: 0 4rem;
-            flex-shrink: 0;
-            backface-visibility: hidden;
+            margin: 0 4rem; /* Add spacing without breaking animation */
+            flex-shrink: 0; /* Prevents shrinking */
         }
 
         .product-image img {
             max-height: 250px;
             width: auto;
-            display: block;
         }
 
-        /* TRUE seamless scrolling */
+        /* Smooth infinite scrolling */
         @keyframes scroll {
             from {
                 transform: translateX(0);
             }
             to {
-                transform: translateX(-100%);
+                transform: translateX(-50%);
             }
         }
     </style>
@@ -77,13 +75,7 @@
             <div class="product-image"><img src="images/Stickers.png" alt="stickers"></div>
             <div class="product-image"><img src="images/TShirt.png" alt="t-shirt"></div>
 
-            <!-- Duplicate set #1 -->
-            <div class="product-image"><img src="images/Board2.png" alt="product"></div>
-            <div class="product-image"><img src="images/FieldBath.png" alt="product"></div>
-            <div class="product-image"><img src="images/Stickers.png" alt="stickers"></div>
-            <div class="product-image"><img src="images/TShirt.png" alt="t-shirt"></div>
-
-            <!-- Duplicate set #2 -->
+            <!-- Duplicate set for seamless looping -->
             <div class="product-image"><img src="images/Board2.png" alt="product"></div>
             <div class="product-image"><img src="images/FieldBath.png" alt="product"></div>
             <div class="product-image"><img src="images/Stickers.png" alt="stickers"></div>
