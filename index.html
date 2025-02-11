@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Infinite Carousel</title>
     <style>
-        /* ✅ CSS Reset: Removes default browser styles */
+        /* ✅ CSS Reset */
         *, *::before, *::after {
             margin: 0;
             padding: 0;
@@ -19,7 +19,7 @@
             background-color: #f8f8f8;
         }
 
-        /* ✅ Carousel container */
+        /* ✅ Carousel Container */
         .products-carousel {
             display: flex;
             overflow: hidden;
@@ -29,15 +29,14 @@
             white-space: nowrap;
         }
 
-        /* ✅ Smooth infinite animation */
+        /* ✅ The true seamless scrolling track */
         .carousel-track {
             display: flex;
             will-change: transform;
-            animation: scroll 8s linear infinite;
-            transform: translate3d(0, 0, 0);
+            animation: scroll 12s linear infinite;
         }
 
-        /* ✅ Image styling */
+        /* ✅ Image Styling */
         .product-image {
             display: flex;
             justify-content: center;
@@ -45,7 +44,6 @@
             padding: 1rem;
             margin: 0 4rem;
             flex-shrink: 0;
-            backface-visibility: hidden;
         }
 
         .product-image img {
@@ -54,13 +52,13 @@
             display: block;
         }
 
-        /* ✅ True seamless scrolling */
+        /* ✅ True Infinite Scrolling Fix */
         @keyframes scroll {
             from {
                 transform: translateX(0);
             }
             to {
-                transform: translateX(-100%);
+                transform: translateX(-33.33%);
             }
         }
     </style>
@@ -75,13 +73,13 @@
             <div class="product-image"><img src="images/Stickers.png" alt="stickers"></div>
             <div class="product-image"><img src="images/TShirt.png" alt="t-shirt"></div>
 
-            <!-- Duplicate set #1 -->
+            <!-- Duplicate Set 1 -->
             <div class="product-image"><img src="images/Board2.png" alt="product"></div>
             <div class="product-image"><img src="images/FieldBath.png" alt="product"></div>
             <div class="product-image"><img src="images/Stickers.png" alt="stickers"></div>
             <div class="product-image"><img src="images/TShirt.png" alt="t-shirt"></div>
 
-            <!-- Duplicate set #2 -->
+            <!-- Duplicate Set 2 -->
             <div class="product-image"><img src="images/Board2.png" alt="product"></div>
             <div class="product-image"><img src="images/FieldBath.png" alt="product"></div>
             <div class="product-image"><img src="images/Stickers.png" alt="stickers"></div>
