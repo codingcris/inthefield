@@ -48,6 +48,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            padding: 1rem;
             margin: 0 4rem; /* Add spacing without breaking animation */
             flex-shrink: 0; /* Prevents shrinking */
         }
@@ -55,10 +56,6 @@
         .product-image img {
             max-height: 250px;
             width: auto;
-        }
-
-        .board {
-            max-width: 450px;
         }
 
         /* Smooth infinite scrolling */
@@ -77,13 +74,13 @@
    <section class="products-carousel">
         <div class="carousel-track">
             <!-- Original set of images -->
-            <div class="product-image"><img src="images/Board2.png" alt="product" class="board"></div>
+            <div class="product-image"><img src="images/Board2.png" alt="product"></div>
             <div class="product-image"><img src="images/FieldBath.png" alt="product"></div>
             <div class="product-image"><img src="images/Stickers.png" alt="stickers"></div>
             <div class="product-image"><img src="images/TShirt.png" alt="t-shirt"></div>
 
             <!-- Duplicate set for seamless looping -->
-            <div class="product-image"><img src="images/Board2.png" alt="product" class="board"></div>
+            <div class="product-image"><img src="images/Board2.png" alt="product"></div>
             <div class="product-image"><img src="images/FieldBath.png" alt="product"></div>
             <div class="product-image"><img src="images/Stickers.png" alt="stickers"></div>
             <div class="product-image"><img src="images/TShirt.png" alt="t-shirt"></div>
