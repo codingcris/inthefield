@@ -19,6 +19,12 @@
             background-color: #f8f8f8;
         }
 
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
         /* ✅ Carousel Container */
         .products-carousel {
             display: flex;
@@ -52,6 +58,10 @@
             width: auto;
         }
 
+        .board {
+            max-width: 450px;
+        }
+
         /* Smooth infinite scrolling */
         @keyframes scroll {
             from {
@@ -68,13 +78,13 @@
    <section class="products-carousel">
         <div class="carousel-track">
             <!-- Original set of images -->
-            <div class="product-image"><img src="images/Board2.png" alt="product"></div>
+            <div class="product-image"><img src="images/Board2.png" alt="product" class="board"></div>
             <div class="product-image"><img src="images/FieldBath.png" alt="product"></div>
             <div class="product-image"><img src="images/Stickers.png" alt="stickers"></div>
             <div class="product-image"><img src="images/TShirt.png" alt="t-shirt"></div>
 
             <!-- Duplicate set for seamless looping -->
-            <div class="product-image"><img src="images/Board2.png" alt="product"></div>
+            <div class="product-image"><img src="images/Board2.png" alt="product" class="board"></div>
             <div class="product-image"><img src="images/FieldBath.png" alt="product"></div>
             <div class="product-image"><img src="images/Stickers.png" alt="stickers"></div>
             <div class="product-image"><img src="images/TShirt.png" alt="t-shirt"></div>
