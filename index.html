@@ -23,6 +23,9 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            background-image: url('images/background/2.JPG');
+            background-size: cover;
+            background-position: center;
         }
 
         /* ✅ Carousel Container */
@@ -58,6 +61,24 @@
             width: auto;
         }
 
+        .board img {
+            max-width: 400px;
+        }
+
+        #background-change {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            position: absolute;
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: red;
+            font-weight: bolder;
+            font-size: x-large;
+        }
+
         /* Smooth infinite scrolling */
         @keyframes scroll {
             from {
@@ -70,22 +91,52 @@
     </style>
 </head>
 <body>
-
    <section class="products-carousel">
         <div class="carousel-track">
             <!-- Original set of images -->
-            <div class="product-image"><img src="images/Board2.png" alt="product"></div>
+            <div class="product-image board"><img src="images/Board2.png" alt="product"></div>
             <div class="product-image"><img src="images/FieldBath.png" alt="product"></div>
             <div class="product-image"><img src="images/Stickers.png" alt="stickers"></div>
             <div class="product-image"><img src="images/TShirt.png" alt="t-shirt"></div>
 
             <!-- Duplicate set for seamless looping -->
-            <div class="product-image"><img src="images/Board2.png" alt="product"></div>
+            <div class="product-image board"><img src="images/Board2.png" alt="product"></div>
             <div class="product-image"><img src="images/FieldBath.png" alt="product"></div>
             <div class="product-image"><img src="images/Stickers.png" alt="stickers"></div>
             <div class="product-image"><img src="images/TShirt.png" alt="t-shirt"></div>
         </div>
    </section> 
+   <section id="background-change">
+    <div class="button" data-bckgrnd="1">1</div>
+    <div class="button" data-bckgrnd="2">2</div>
+    <div class="button" data-bckgrnd="3">3</div>
+    <div class="button" data-bckgrnd="4">4</div>
+    <div class="button" data-bckgrnd="5">5</div>
+    <div class="button" data-bckgrnd="6">6</div>
+    <div class="button" data-bckgrnd="7">7</div>
+   </section>
 
 </body>
+
+<script>
+    const carouselTrack = document.querySelector('.carousel-track');
+    const backgroundChange = document.querySelector('#background-change');
+
+    backgroundChange.addEventListener('click', (e) => {
+        const button = e.target.closest('.button');
+        if (!button) return;
+
+        const bckgrnd = button.dataset.bckgrnd;
+        document.body.style.backgroundImage = `url('images/background/${bckgrnd}.JPG')`;
+
+        if (bckgrnd == 1 || bckgrnd == 6 || bckgrnd == 7){
+            document.querySelector('body').style.backgroundSize = 'contain'
+            document.querySelector('body').style.backgroundRepeat = 'repeat'
+        }   else {
+            document.querySelector('body').style.backgroundSize = 'cover'
+            document.querySelector('body').style.backgroundRepeat = 'no-repeat'
+        }
+    });
+</script>
+
 </html>

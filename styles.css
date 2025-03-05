@@ -28,8 +28,7 @@ body {
 .carousel-track {
     display: flex;
     animation: slide 16s linear infinite;
-    gap: 8rem;
-
+    
 }
 
 .product-image img {
